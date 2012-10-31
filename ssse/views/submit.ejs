@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    
+    <% if(message) { %>
+        <h2><%= message %></h2>
+    <% } %>
+    
+    <form action='/submit' method='post'>
+        <input type='text' name='url' />
+        <button>送出</button>
+    </form>
+    
+    <hr>
+    
+    <a href='/'>回首頁</a>
+
+  </body>
+</html>
