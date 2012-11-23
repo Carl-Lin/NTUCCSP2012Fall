@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src='https://raw.github.com/documentcloud/underscore/master/underscore.js'></script>
+    <script type="text/javascript" src='https://raw.github.com/documentcloud/backbone/master/backbone.js'></script>
+  </head>
+  <body>
+    <!-- 點擊此連結要顯示 SUBMIT VIEW -->
+    <h1>CCSP HW5 AJAX-BASED SEARCH ENGINE WITH BACKBONE</h1>
+    <a href="#submit">提交頁</a>
+    <a href="#search">搜尋頁</a>
+
+    <!-- 
+		將VIEW RENDER到這裡面
+	-->
+    <div id='container'>
+
+    </div>
+
+    <!-- 
+		按搜尋之後不能送出request
+		要用Backbone的事件機制來處理事件
+
+		搜尋輸出範例
+		<a href="www.yahoo.com.tw">Yahooooooo!</a> <br>
+		<a href="www.google.com.tw">Gooooooooogle</a>
+	-->
+    <script type="text/template" id='search-view'>
+		<h1>SEARCH VIEW</h1>
+		<form id='search' >
+	    	<input type='text' />
+	    	<button>搜尋</button>
+	    </form>
+	    <h2>搜尋結果</h2>
+	    <div id='search-result'>
+	    </div>	
+    </script>
+
+    <!-- 
+    	SUBMIT VIEW
+    	要用Backbone的事件機制來處理案送出 (aka 不能產生頁轉換) 
+    	伺服器要建立 標題對url的mapping
+   	-->
+    <script type="text/template" id='submit-view'>
+    	<h1>SUBMIT VIEW</h1>
+    	<form>
+    		<label>輸入網址</label>
+    		<input type='text' />
+    		<label>輸入標題</label>
+    		<input type='text' />
+    		<button>送出</button>
+    	</form>
+    </script>
+
+
+    <script type="text/javascript">
+    	$(function(){
+
+    		var SubmitView = Backbone.View.extend({
+    			// 你要coding這邊
+    			// 要能處理 form 的 submit 事件  (提交 title:url pair)
+    		});
+
+    		var SearchView = Backbone.View.extend({
+    			// 你要coding這邊
+    			// 要能處理 form 的 submit 事件  (搜尋標題並顯示在 div#search-result)
+    		});
+
+    		var workspace = Backbone.Router.extend({
+    			routes : {
+    				'submit' : 'submit'
+    				, 'search' : 'search'
+    				// , '*path' : 'search'
+    			}
+    			, submit : function() {
+    				// 你要coding這邊
+    				// 顯示 SUBMIT VIEW
+    			}
+    			, search : function() {
+    				// 你要coding這邊
+    				// 顯示 SEARCH VIEW
+    			}
+    		});
+
+    	});
+    </script>
+
+  </body>
+</html>
